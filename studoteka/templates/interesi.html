@@ -1,0 +1,21 @@
+{% block container %}
+
+<link rel="stylesheet" href="{{url_for('.static', filename='css/smart-green.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='css/dodaci.css')}}" type="text/css" />
+<script type="text/javascript" src="{{url_for('.static', filename='js/interesi.js')}}"></script>
+<div id="container">
+	<div id="listaInteresa">
+		<div id="pick">  
+			<select name="source"></select>  
+			<select name="target"></select>  
+		</div>
+	</div>
+	<div id="dodavanje" class = "container smart-green">
+		<input type="text" id="naziv" placeholder="Naziv interesa"/>
+		<button id ="btndodaj" class="button">Dodaj interes</button>
+		<button id="btnspremi" class="button">Spremi promjene</button>
+	</div>
+	<div id="msg"></div>
+</div>
+
+{% endblock %}

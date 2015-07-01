@@ -1,0 +1,9 @@
+{% extends "admin_index.html" %}
+
+{% block sadrzaj %}
+	<form method="POST" action="/adminObavijesti">
+		Naslov obavijesti: <input name="naslov" type="text" /><br><br><br>Tekst obavijesti<br>
+		<textarea name="tekst" rows="5" cols="50" ></textarea><br><br>
+		<input type="submit" value="Posalji" />
+	</form><br><br>
+{% endblock %}

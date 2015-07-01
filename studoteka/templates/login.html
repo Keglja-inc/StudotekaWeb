@@ -1,0 +1,32 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "index.html" %}
+
+	{% block head %}
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/registration-form.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/smart-green.css')}}">
+	{% endblock %}
+
+	{% block container %}
+		<div id = "loginForm" class = "container smart-green">
+			<h1>Prijava u sustav</h1>
+			<form role="form" class = "form-horizontal" method='POST' action="/login">
+				<dl>
+					{{ render_field(form.email) }}
+					{{ render_field(form.password) }}
+					
+					
+				</dl>
+				<p>
+					<input type=submit value=Prijava class="button">
+					<a href="/registracija"><input id="regOpen" type=button value=Registracija class="button"></a>
+				</p>
+				<p>
+					{% for message in get_flashed_messages() %}
+						<div class="flash" id="poruka">
+							{{ message }}
+						</div>
+					{% endfor %}
+				</p>
+			</form>
+		</div>
+	{% endblock %}

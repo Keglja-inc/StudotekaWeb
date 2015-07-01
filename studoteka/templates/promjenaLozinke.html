@@ -1,0 +1,30 @@
+{% from "_formhelpers.html" import render_field %}
+{% block container %}
+	<link rel="stylesheet" href="{{url_for('.static', filename='css/smart-green.css')}}">
+	<div id="msg"></div>
+	
+	<div id = "promjenaLozinke" class = "container smart-green">
+		<h1>Promjena lozinke</h1>
+		<form class = "form-horizontal">
+			<dl>
+				{{ render_field(form.trenutnaLozinka) }}
+				{{ render_field(form.novaLozinka) }}
+				{{ render_field(form.ponovljenaLozinka) }}
+				
+			</dl>
+			<p>
+				<input id="btnPromjenaLozinke" type="button" value="Promjena lozinke" class="button">
+				
+			</p>
+			<p>
+				{% for message in get_flashed_messages() %}
+					<div class="flash" id="poruka">
+						{{ message }}
+					</div>
+				{% endfor %}
+			</p>
+		</form>
+	</div>
+	<script type="text/javascript" src="{{url_for('.static', filename='js/promjenaLozinke.js')}}"></script>
+	<link rel="stylesheet" href="{{url_for('.static', filename='js/lib/primeui-1.1/themes/aristo/theme.css')}}" type="text/css" />
+{% endblock %}

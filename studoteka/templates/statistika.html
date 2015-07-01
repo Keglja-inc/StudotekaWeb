@@ -1,0 +1,34 @@
+{% block container %}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/statistika.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='css/buttons.css')}}">
+<script type="text/javascript" src="{{url_for('.static', filename='js/Chart.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('.static', filename='js/config-grafova.js')}}"></script>
+<script type="text/javascript" src="{{url_for('.static', filename='js/grafovi.js')}}"></script>
+
+	<div id="container">
+		<div id="lijevo">
+			<input id="btnPrioriteti" type="button" class="btn" value="Pregled po prioritetima" />
+			<input id="btnPostoci" type="button" class="btn" value="Pregled po postocima" />
+			<input id="btnTop10" type="button" class="btn" value="Pregled top 10 fakulteta" />
+			<br>
+			<!-- <select name="raspon">
+				<option value="13">Cijela godina</option>
+				<option value="1">Sijecanj</option>
+				<option value="2">Veljaca</option>
+				<option value="3">Ozujak</option>
+				<option value="4">Travanj</option>
+				<option value="5">Svibanj</option>
+				<option value="6">Lipanj</option>
+				<option value="7">Srpanj</option>
+				<option value="8">Kolovoz</option>
+				<option value="9">Rujan</option>
+				<option value="10">Listopad</option>
+				<option value="11">Studeni</option>
+				<option value="12">Prosinac</option>
+			</select>  -->
+		</div>
+		<div id="desno">
+			
+		</div>
+	</div>
+{% endblock %}

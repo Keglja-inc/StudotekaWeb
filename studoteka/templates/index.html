@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Studoteka</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<meta charset="UTF-8" />
+
+	<link rel="stylesheet" href="{{url_for('.static', filename='js/lib/primeui-1.1/production/primeui-1.1-min.css')}}" type="text/css" />
+
+	<link rel="stylesheet" href="{{url_for('.static', filename='css/registration-form.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.css')}}" type="text/css" />
+
+	<link rel="stylesheet" href="{{url_for('.static', filename='css/jquery-ui.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{url_for('.static', filename='css/jquery-ui.structure.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{url_for('.static', filename='css/jquery-ui.theme.css')}}" type="text/css" />
+
+	<script src="{{url_for('.static', filename='jquery.js')}}" type="text/javascript"></script>
+	<script src="{{url_for('.static', filename='jquery-ui.js')}}" type="text/javascript"></script>
+	<script src="{{url_for('.static', filename='js/bootstrap.js')}}" type="text/javascript"></script>
+
+	<script src="{{url_for('.static', filename='js/lib/primeui-1.1/production/primeui-1.1-min.js')}}" type="text/javascript"></script>
+
+	{% block head %}
+	{% endblock %}
+</head>
+
+<body>
+	{% block navigation %}
+	{% endblock %}
+
+	{% block container %}
+	<div id="container">
+	</div>
+	{% endblock %}
+
+	{% block footer %}
+	<footer>
+		<div class="loadingOverlay">
+			<div class="circle"></div> <!-- it makes sense to put these inside -->
+			<div class="circle1"></div>
+		</div>
+	</footer>
+	{% endblock %}
+</body>
+</html>
+

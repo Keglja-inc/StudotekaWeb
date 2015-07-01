@@ -1,0 +1,20 @@
+#listaInteresa{
+	right: 0px;
+	width: 730px;
+	margin: auto auto;
+}
+
+#dodavanje{
+	padding-top: 20px;
+	right: 0px;
+	width: 850px;
+	margin: auto auto;
+	
+}
+#dodavanje input {
+	width: 350px;
+}
+#pick > div.pui-picklist-listwrapper{
+	width: 330px !important;
+	height: 400px  !important;
+}

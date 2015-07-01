@@ -1,0 +1,28 @@
+{% extends "admin_index.html" %}
+
+{% block sadrzaj %}
+	<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>ID Zapisa</th>
+                <th>Vrijeme</th>
+                <th>Korisnik</th>
+                <th>Tip korisnika</th>
+                <th>Akcija</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>ID Zapisa</th>
+                <th>Vrijeme</th>
+                <th>Korisnik</th>
+                <th>Tip korisnika</th>
+                <th>Akcija</th>                
+            </tr>
+        </tfoot>
+    </table>
+    <script type="text/javascript" src="{{url_for('.static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/dataTables/jquery.dataTables.css')}}" type="text/css" />
+    <script type="text/javascript" src="{{url_for('.static', filename='js/dnevnik.js')}}"></script>
+{% endblock %}

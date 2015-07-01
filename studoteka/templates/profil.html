@@ -1,0 +1,112 @@
+{% from "_formhelpers.html" import render_field %}
+
+{% block container %}
+<script type="text/javascript" src="{{url_for('.static', filename='js/profil.js')}}"></script>
+<div class='container'>
+	<div class='panel panel-primary dialog-panel'>
+		<div class='panel-heading'>
+			<h5>Podaci o fakultetu</h5>
+		</div>
+		<div class='panel-body'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 col-md-offset-1">
+						<img src="http://www.radio-varazdin.hr/cms/upload/slike/foi-grb.jpg" alt="NEMA SLIKE" class='col-md-8' name='id_logo' style="width: 100%; height: 100%;"/>
+						<button style="width: 100%;">Promjeni logo</button>
+					</div>
+					<div class="col-md-8">
+						<form class='form-horizontal' role='form' action="/" method='POST'>
+							<div class='form-group'>
+								<label class='control-label col-md-2' for='id_podaci'>Podaci visokog učilišta</label>
+								<div class='col-md-8'>
+									<div class='form-group internal'>
+										<div class='col-md-11'>
+											<input class='form-control col-md-8' name='id_naziv' placeholder='Naziv visokog učilišta' type='text'
+												value = "{%if session['user_data']['naziv']!=None%}{{session['user_data']['naziv']}}{%endif%}">
+										</div>
+									</div>
+									<div class='form-group internal'>
+										<div class='col-md-8'>
+											<input class='form-control col-md-8' name='id_ulica' placeholder='Ulica' type='text'
+											value = "{%if session['user_data']['ulica']!=None%}{{session['user_data']['ulica']}}{%endif%}">
+										</div>
+										<div class='col-md-3'>
+											<input class='form-control' name='id_kucniBroj' placeholder='Kućni broj' type='text'
+											value = "{%if session['user_data']['kucniBroj']!=None%}{{session['user_data']['kucniBroj']}}{%endif%}">
+										</div>
+									</div>
+									<div class='form-group internal'>
+										<div class='col-md-5'>
+											<input class='form-control' name='id_postanskiBroj' placeholder='Poštanski broj' type='text'
+											value = "{%if session['user_data']['postanskiBroj']!=None %}{{session['user_data']['postanskiBroj']}}{%endif%}">
+										</div>
+										<div class='col-md-6'>
+											<input class='form-control' name='id_mjesto' placeholder='Mjesto' type='text'
+											value = "{%if session['user_data']['mjesto']!=None%}{{session['user_data']['mjesto']}}{%endif%}">
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class='form-group'>
+								<label class='control-label col-md-2' for='id_kontakt'>Kontakt</label>
+								<div class='col-md-8'>
+									<div class='form-group'>
+										<div class='col-md-11'>
+											<input class='form-control' name='id_kontaktEmail' placeholder='Kontakt E-mail: naziv@domena.hr' type='text'
+											value = "{%if session['user_data']['kontaktEmail']!=None%}{{session['user_data']['kontaktEmail']}}{%endif%}">
+										</div>
+									</div>
+									<div class='form-group internal'>
+										<div class='col-md-11'>
+											<input class='form-control' name='id_kontaktTelefon' placeholder='Kontakt telefon: +385 xx xxx xxxxx' type='text'
+											value = "{%if session['user_data']['kontaktTelefon']!=None%}{{session['user_data']['kontaktTelefon']}}{%endif%}">
+										</div>
+									</div>
+									<div class='form-group internal'>
+										<div class='col-md-11'>
+											<input class='form-control' name='id_webStranica' placeholder='Web stranica' type='text'
+											value = "{%if session['user_data']['webStranica']!=None%}{{session['user_data']['webStranica']}}{%endif%}">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='form-group'>
+								<label class='control-label col-md-2' for='id_equipment'>Sveučilište / Veleučilište</label>
+								<div class='col-md-8'>
+									<div class='col-md-11'>
+										<div class='form-group internal'>
+											<select class='form-control' name='id_visokoUciliste'>
+												{% for uciliste in popis: %}
+												<option value = "{{uciliste['idVisokogUcilista']}}" {%if session['user_data']['visokoUciliste']==uciliste['idVisokogUcilista']%} selected{%endif%}>{{uciliste['naziv']}}</option> 
+												{%endfor%}
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>							
+							<div class='form-group'>
+								<div class='col-md-offset-8 col-md-4'>
+									<button id="btnPosalji" class='btn-lg btn-primary' type="button">Spremi promjene</button>
+								</div>
+							</div>							
+							<div class='form-group'>
+								<div class='col-md-4'>
+									<div id="msg"></div>
+									{% for message in get_flashed_messages() %}
+									<div class="flash" id="poruka">
+										{{ message }}
+									</div>
+									{% endfor %}
+								</div>
+							</div>							
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<link rel="stylesheet" href="{{url_for('.static', filename='js/lib/primeui-1.1/themes/aristo/theme.css')}}" type="text/css" />
+{% endblock %}

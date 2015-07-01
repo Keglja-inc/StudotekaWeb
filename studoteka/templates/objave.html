@@ -1,0 +1,11 @@
+{% block container %}
+<div id="poruke" style="width:600px; right:0px; left:0px; margin: auto auto">
+	{% for poruka in poruke %}
+		 <h3>{{poruka.vrijeme}} - {{poruka.naslov}}</h3>
+	     <div>{{poruka.tekst}}</div>
+	{% endfor %}
+	</ul>
+</div>
+
+<script type="text/javascript" src="{{url_for('.static', filename='js/objave.js')}}"></script>
+{% endblock %}

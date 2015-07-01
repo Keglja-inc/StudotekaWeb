@@ -1,0 +1,24 @@
+#regForm, #loginForm {
+	width: 400px;
+	height: 500px;
+	right: 0px;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	margin: auto;
+	position: absolute;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#loginForm {
+	height: 370px;
+}
+
+#regOpen {
+	position: absolute;
+	right: 30px;
+}
+#poruka {
+	color: red;
+}
